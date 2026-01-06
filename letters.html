@@ -1,87 +1,133 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Letters</title>
+<title>A Letter</title>
+
+<!-- Handwritten font -->
 <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
 
 <style>
 body {
+  margin: 0;
+  padding: 40px 20px;
   background: #e9e4f8;
   font-family: 'Patrick Hand', cursive;
-  padding: 40px 20px;
 }
 
-.book {
+.page {
   max-width: 800px;
   margin: auto;
   background: #fffdf7;
   padding: 50px;
-  border-radius: 16px;
+  border-radius: 18px;
+  position: relative;
   box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-  perspective: 1200px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease;
 }
 
-.page {
+.page.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h1 {
+  text-align: center;
+  color: #6b4fa1;
+  margin-bottom: 30px;
+}
+
+p {
   font-size: 20px;
   line-height: 1.8;
-  animation: flip 0.8s ease;
+  color: #333;
+  margin-bottom: 22px;
 }
 
-@keyframes flip {
-  from { transform: rotateY(-10deg); opacity: 0; }
-  to { transform: rotateY(0); opacity: 1; }
+/* Lavender flower accents */
+.flower {
+  position: absolute;
+  width: 80px;
+  opacity: 0.6;
+}
+
+.top-left {
+  top: -20px;
+  left: -20px;
+}
+
+.top-right {
+  top: -20px;
+  right: -20px;
+}
+
+.bottom-left {
+  bottom: -20px;
+  left: -20px;
+}
+
+.bottom-right {
+  bottom: -20px;
+  right: -20px;
 }
 
 .nav {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 30px;
+  text-align: center;
+  margin-top: 40px;
 }
 
-button {
-  padding: 10px 22px;
-  background: #c4b5fd;
-  border: none;
-  border-radius: 20px;
-  font-weight: bold;
-  cursor: pointer;
+a {
+  color: #6b4fa1;
+  text-decoration: none;
+  font-size: 18px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="book">
-<div class="page" id="page"></div>
+<div class="page" id="letter">
 
-<div class="nav">
-<button onclick="prev()">← Prev</button>
-<button onclick="next()">Next →</button>
-</div>
+  <!-- Lavender decorations -->
+  <img src="https://i.imgur.com/4AiXzf8.png" class="flower top-left">
+  <img src="https://i.imgur.com/4AiXzf8.png" class="flower top-right">
+  <img src="https://i.imgur.com/4AiXzf8.png" class="flower bottom-left">
+  <img src="https://i.imgur.com/4AiXzf8.png" class="flower bottom-right">
+
+  <h1>A Letter</h1>
+
+  <p>
+    I wanted to write this slowly, the way letters used to be written.
+  </p>
+
+  <p>
+    There’s no rush here and no expectations —
+    just a few honest words on a page.
+  </p>
+
+  <p>
+    I’m really glad our paths crossed,
+    and I appreciate the moments we’ve shared,
+    even the quiet ones.
+  </p>
+
+  <p>
+    You don’t have to read this all at once.
+    You can always come back whenever you feel like it.
+  </p>
+
+  <div class="nav">
+    <a href="message.html">← Back</a>
+  </div>
+
 </div>
 
 <script>
-const letters = [
-  "I wanted to write this slowly, like real letters used to be written.",
-  "There’s no rush here, just honesty.",
-  "I’m glad our paths crossed.",
-  "You can always come back to this page."
-];
-
-let i = 0;
-const page = document.getElementById("page");
-page.innerText = letters[i];
-
-function next() {
-  if (i < letters.length - 1) i++;
-  page.innerText = letters[i];
-}
-
-function prev() {
-  if (i > 0) i--;
-  page.innerText = letters[i];
-}
+window.onload = function () {
+  document.getElementById("letter").classList.add("show");
+};
 </script>
 
 </body>
