@@ -1,106 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Moments</title>
+<meta charset="UTF-8">
+<title>Moments</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
-      padding: 50px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
+<style>
+body {
+  background: #020617;
+  color: #e5e7eb;
+  font-family: Arial;
+  padding: 50px 20px;
+  max-width: 900px;
+  margin: auto;
+}
 
-    h1 {
-      text-align: center;
-      color: #c4b5fd;
-      margin-bottom: 30px;
-    }
+h1 {
+  text-align: center;
+  color: #c4b5fd;
+}
 
-    .card {
-      background: #1e293b;
-      padding: 25px;
-      border-radius: 16px;
-      margin-bottom: 25px;
-      font-size: 17px;
-      line-height: 1.6;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.8s ease;
-    }
+.card {
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 16px;
+  margin-bottom: 25px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
 
-    .card.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 50px;
-    }
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
 
-    button {
-      padding: 12px 28px;
-      background: #ffd369;
-      border: none;
-      border-radius: 25px;
-      font-weight: bold;
-      cursor: pointer;
-      font-size: 15px;
-    }
+button {
+  padding: 12px 26px;
+  background: #ffd369;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-    a {
-      color: #c4b5fd;
-      text-decoration: none;
-      font-weight: bold;
-      align-self: center;
-    }
-  </style>
+a {
+  color: #c4b5fd;
+  text-decoration: none;
+}
+</style>
 </head>
 
 <body>
+<h1>Moments</h1>
 
-  <h1>Moments</h1>
+<div class="card">Games, laughs, and shared time.</div>
+<div class="card">Quiet moments that still felt full.</div>
+<div class="card">Things that felt natural.</div>
 
-  <div class="card">
-    This page is about the little things —
-    the games we played, the laughs we shared,
-    and the time that felt easy.
-  </div>
+<div class="nav">
+<a href="home.html">← Back</a>
+<button onclick="next()">Next →</button>
+</div>
 
-  <div class="card">
-    🎮 Games, random talks, inside jokes,
-    and moments that didn’t need much explanation.
-  </div>
-
-  <div class="card">
-    What mattered most wasn’t the activity,
-    but how natural everything felt.
-  </div>
-
-  <div class="nav">
-    <a href="home.html">← Back</a>
-    <button onclick="goNext()">Next →</button>
-  </div>
-
-  <script>
-    window.onload = function () {
-      const cards = document.querySelectorAll(".card");
-      cards.forEach((card, index) => {
-        setTimeout(() => {
-          card.classList.add("show");
-        }, index * 200);
-      });
-    };
-
-    function goNext() {
-      window.location.href = "growth.html";
-    }
-  </script>
-
+<script>
+window.onload = () => {
+  document.querySelectorAll(".card").forEach((c,i)=>{
+    setTimeout(()=>c.classList.add("show"), i*200);
+  });
+};
+function next() {
+  window.location.href = "growth.html";
+}
+</script>
 </body>
 </html>
+
