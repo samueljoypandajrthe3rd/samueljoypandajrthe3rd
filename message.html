@@ -1,86 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>A Small Note</title>
+<meta charset="UTF-8">
+<title>A Note</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #020617;
-      color: #e5e7eb;
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
+<style>
+body {
+  background: #020617;
+  color: #e5e7eb;
+  font-family: Arial;
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+}
 
-    h1 {
-      text-align: center;
-      color: #c4b5fd;
-      margin-bottom: 30px;
-    }
+h1 {
+  text-align: center;
+  color: #c4b5fd;
+}
 
-    .box {
-      background: #1e293b;
-      padding: 30px;
-      border-radius: 18px;
-      font-size: 18px;
-      line-height: 1.7;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.8s ease;
-    }
+.box {
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 18px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
 
-    .box.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
+.box.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 50px;
-    }
+.nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
 
-    a {
-      color: #c4b5fd;
-      text-decoration: none;
-      font-weight: bold;
-      align-self: center;
-    }
-  </style>
+a { color: #c4b5fd; text-decoration: none; }
+</style>
 </head>
 
 <body>
+<h1>Just So You Know</h1>
 
-  <h1>Just So You Know</h1>
+<div class="box" id="box">
+<p>You never need to explain yourself here.</p>
+<p>We can always talk naturally.</p>
+<p>No pressure. Just comfort.</p>
+</div>
 
-  <div class="box" id="note">
-    <p>
-      You never have to feel like you need to explain yourself here.
-    </p>
+<div class="nav">
+<a href="growth.html">← Back</a>
+<a href="letters.html">Next →</a>
+</div>
 
-    <p>
-      If something feels off, we can always talk about it normally,
-      in our own time.
-    </p>
-
-    <p>
-      This space isn’t about expectations —
-      it’s just about being comfortable and honest.
-    </p>
-  </div>
-
-  <div class="nav">
-    <a href="growth.html">← Back</a>
-    <a href="letters.html">Next →</a>
-  </div>
-
-  <script>
-    window.onload = function () {
-      document.getElementById("note").classList.add("show");
-    };
-  </script>
-
+<script>
+window.onload = ()=>document.getElementById("box").classList.add("show");
+</script>
 </body>
 </html>
