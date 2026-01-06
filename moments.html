@@ -27,6 +27,14 @@
       margin-bottom: 25px;
       font-size: 17px;
       line-height: 1.6;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+
+    .card.show {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .nav {
@@ -80,6 +88,15 @@
   </div>
 
   <script>
+    window.onload = function () {
+      const cards = document.querySelectorAll(".card");
+      cards.forEach((card, index) => {
+        setTimeout(() => {
+          card.classList.add("show");
+        }, index * 200);
+      });
+    };
+
     function goNext() {
       window.location.href = "growth.html";
     }
