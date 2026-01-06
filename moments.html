@@ -1,35 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Moments</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
       background: #0f172a;
       color: #e5e7eb;
-      padding: 40px;
+      padding: 50px 20px;
       max-width: 900px;
       margin: auto;
     }
 
     h1 {
-      color: #c4b5fd;
       text-align: center;
+      color: #c4b5fd;
+      margin-bottom: 30px;
     }
 
     .card {
       background: #1e293b;
-      padding: 20px;
-      border-radius: 12px;
-      margin: 20px 0;
+      padding: 25px;
+      border-radius: 16px;
+      margin-bottom: 25px;
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 50px;
+    }
+
+    button {
+      padding: 12px 28px;
+      background: #ffd369;
+      border: none;
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 15px;
     }
 
     a {
       color: #c4b5fd;
       text-decoration: none;
-      display: inline-block;
-      margin-top: 20px;
+      font-weight: bold;
+      align-self: center;
     }
   </style>
 </head>
@@ -39,30 +59,31 @@
   <h1>Moments</h1>
 
   <div class="card">
-    <p>
-      This page is about the little things —
-      the games we played, the conversations we shared,
-      and the time that somehow felt easy.
-    </p>
+    This page is about the little things —
+    the games we played, the laughs we shared,
+    and the time that felt easy.
   </div>
 
   <div class="card">
-    <p><b>🎮 Games:</b></p>
-    <ul>
-      <li>Late-night games</li>
-      <li>Laughing over small wins and losses</li>
-      <li>Moments that didn’t need much talking</li>
-    </ul>
+    🎮 Games, random talks, inside jokes,
+    and moments that didn’t need much explanation.
   </div>
 
   <div class="card">
-    <p>
-      What I liked most wasn’t the activity itself,
-      but how natural everything felt.
-    </p>
+    What mattered most wasn’t the activity,
+    but how natural everything felt.
   </div>
 
-  <a href="home.html">← Back</a>
+  <div class="nav">
+    <a href="home.html">← Back</a>
+    <button onclick="goNext()">Next →</button>
+  </div>
+
+  <script>
+    function goNext() {
+      window.location.href = "growth.html";
+    }
+  </script>
 
 </body>
 </html>
