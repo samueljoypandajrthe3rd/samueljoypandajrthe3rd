@@ -1,97 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>How I Felt</title>
+<meta charset="UTF-8">
+<title>How I Felt</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #111827;
-      color: #e5e7eb;
-      padding: 50px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
+<style>
+body {
+  background: #0f172a;
+  color: #e5e7eb;
+  font-family: Arial;
+  padding: 50px 20px;
+  max-width: 900px;
+  margin: auto;
+}
 
-    h1 {
-      text-align: center;
-      color: #ffd369;
-      margin-bottom: 30px;
-    }
+h1 {
+  text-align: center;
+  color: #c4b5fd;
+}
 
-    p {
-      font-size: 18px;
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
+.content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease;
+}
 
-    .content {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.9s ease;
-    }
+.content.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    .content.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .nav {
-      margin-top: 50px;
-      text-align: center;
-    }
-
-    button {
-      padding: 14px 32px;
-      background: #ffd369;
-      border: none;
-      border-radius: 30px;
-      font-weight: bold;
-      cursor: pointer;
-      font-size: 16px;
-    }
-
-    button:hover {
-      opacity: 0.9;
-    }
-  </style>
+button {
+  margin-top: 40px;
+  padding: 14px 30px;
+  background: #ffd369;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
 </head>
 
 <body>
+<div class="content" id="content">
+<h1>How I Felt</h1>
+<p>Talking to you felt easy.</p>
+<p>The conversations never felt forced.</p>
+<p>That’s when I knew I liked getting to know you.</p>
+</div>
 
-  <div class="content" id="content">
-    <h1>How I Felt</h1>
+<button onclick="next()">Next →</button>
 
-    <p>
-      When we first talked, nothing felt forced.
-      Conversations felt natural, and time passed easily.
-    </p>
-
-    <p>
-      I started enjoying those small moments —
-      the talks, the laughs, even the quiet parts.
-    </p>
-
-    <p>
-      That’s when I realized I genuinely liked getting to know you.
-      No rush. Just honesty.
-    </p>
-  </div>
-
-  <div class="nav">
-    <button onclick="goNext()">Next →</button>
-  </div>
-
-  <script>
-    window.onload = function () {
-      document.getElementById("content").classList.add("show");
-    };
-
-    function goNext() {
-      window.location.href = "moments.html";
-    }
-  </script>
-
+<script>
+window.onload = () => document.getElementById("content").classList.add("show");
+function next() {
+  window.location.href = "moments.html";
+}
+</script>
 </body>
 </html>
