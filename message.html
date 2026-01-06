@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Thoughts</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #020617;
+      color: #e5e7eb;
+      padding: 50px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      color: #c4b5fd;
+      margin-bottom: 20px;
+    }
+
+    p {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #cbd5f5;
+    }
+
+    textarea {
+      width: 100%;
+      height: 160px;
+      background: #1e293b;
+      border: none;
+      border-radius: 12px;
+      padding: 15px;
+      color: #e5e7eb;
+      font-size: 16px;
+      resize: none;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 30px;
+      background: #ffd369;
+      border: none;
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .message {
+      text-align: center;
+      margin-top: 20px;
+      color: #86efac;
+      display: none;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 50px;
+    }
+
+    a {
+      color: #c4b5fd;
+      text-decoration: none;
+      font-weight: bold;
+      align-self: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Your Thoughts</h1>
+  <p>
+    You can write anything here —
+    there’s no right or wrong.
+  </p>
+
+  <textarea id="text" placeholder="Type here..."></textarea>
+
+  <button onclick="sendMessage()">Send</button>
+
+  <div class="message" id="confirm">
+    Thank you for sharing 🤍
+  </div>
+
+  <div class="nav">
+    <a href="growth.html">← Back</a>
+    <a href="letters.html">Next →</a>
+  </div>
+
+  <script>
+    function sendMessage() {
+      const text = document.getElementById("text").value.trim();
+      if (text !== "") {
+        document.getElementById("confirm").style.display = "block";
+        document.getElementById("text").value = "";
+      }
+    }
+  </script>
+
+</body>
+</html>
