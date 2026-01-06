@@ -26,6 +26,17 @@
       margin-bottom: 20px;
     }
 
+    .content {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.9s ease;
+    }
+
+    .content.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     .nav {
       margin-top: 50px;
       text-align: center;
@@ -49,28 +60,34 @@
 
 <body>
 
-  <h1>How I Felt</h1>
+  <div class="content" id="content">
+    <h1>How I Felt</h1>
 
-  <p>
-    When we first talked, nothing felt forced.
-    Conversations felt natural, and time passed easily.
-  </p>
+    <p>
+      When we first talked, nothing felt forced.
+      Conversations felt natural, and time passed easily.
+    </p>
 
-  <p>
-    I started enjoying those small moments —
-    the talks, the laughs, even the quiet parts.
-  </p>
+    <p>
+      I started enjoying those small moments —
+      the talks, the laughs, even the quiet parts.
+    </p>
 
-  <p>
-    That’s when I realized I genuinely liked getting to know you.
-    No rush. Just honesty. hehe
-  </p>
+    <p>
+      That’s when I realized I genuinely liked getting to know you.
+      No rush. Just honesty.
+    </p>
+  </div>
 
   <div class="nav">
     <button onclick="goNext()">Next →</button>
   </div>
 
   <script>
+    window.onload = function () {
+      document.getElementById("content").classList.add("show");
+    };
+
     function goNext() {
       window.location.href = "moments.html";
     }
