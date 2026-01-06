@@ -1,23 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>How I Felt</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #111;
-      color: #eee;
-      padding: 40px;
-      max-width: 800px;
+      background: #111827;
+      color: #e5e7eb;
+      padding: 50px 20px;
+      max-width: 900px;
       margin: auto;
     }
+
     h1 {
+      text-align: center;
       color: #ffd369;
+      margin-bottom: 30px;
     }
-    a {
-      color: #ffd369;
-      text-decoration: none;
+
+    p {
+      font-size: 18px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .nav {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    button {
+      padding: 14px 32px;
+      background: #ffd369;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      opacity: 0.9;
     }
   </style>
 </head>
@@ -27,41 +52,29 @@
   <h1>How I Felt</h1>
 
   <p>
-    When we first talked, what stood out to me wasn’t anything dramatic.
-    It was how easy it felt.
+    When we first talked, nothing felt forced.
+    Conversations felt natural, and time passed easily.
   </p>
 
   <p>
-    I found myself enjoying our conversations and looking forward to them,
-    and that’s when I realized I liked getting to know you more.
+    I started enjoying those small moments —
+    the talks, the laughs, even the quiet parts.
   </p>
 
   <p>
-    This page isn’t meant to rush anything —
-    just to be honest.
+    That’s when I realized I genuinely liked getting to know you.
+    No rush. Just honesty.
   </p>
 
-<hr style="margin:40px 0; border-color:#333;">
+  <div class="nav">
+    <button onclick="goNext()">Next →</button>
+  </div>
 
-<div style="text-align:center; margin-bottom:20px;">
-  <a href="moments.html" style="
-    display:inline-block;
-    padding:12px 24px;
-    background:#ffd369;
-    color:#000;
-    text-decoration:none;
-    border-radius:8px;
-    font-weight:bold;
-  ">
-    Go to Next Page →
-  </a>
-</div>
-
-<div style="text-align:center;">
-  <a href="index.html" style="color:#ffd369;">
-    ← Back
-  </a>
-</div>
+  <script>
+    function goNext() {
+      window.location.href = "moments.html";
+    }
+  </script>
 
 </body>
 </html>
