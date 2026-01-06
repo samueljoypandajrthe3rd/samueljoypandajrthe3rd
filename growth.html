@@ -1,1 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Growing</title>
 
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #020617;
+      color: #e5e7eb;
+      padding: 50px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      color: #c4b5fd;
+      margin-bottom: 40px;
+    }
+
+    .box {
+      background: #1e293b;
+      padding: 25px;
+      border-radius: 16px;
+      margin-bottom: 25px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+
+    .box.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 22px;
+      background: #ffd369;
+      border: none;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .hidden {
+      display: none;
+      margin-top: 15px;
+      line-height: 1.6;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 50px;
+    }
+
+    a {
+      color: #c4b5fd;
+      text-decoration: none;
+      font-weight: bold;
+      align-self: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Growing</h1>
+
+  <div class="box">
+    This page isn’t about promises or pressure.
+    It’s just about being honest and intentional.
+  </div>
+
+  <div class="box">
+    <b>What I’m working on</b><br>
+    <button onclick="toggleText('g1')">Read</button>
+
+    <div id="g1" class="hidden">
+      I’m learning to manage my time better,
+      communicate more clearly,
+      and be more present — especially on busy days.
+    </div>
+  </div>
+
+  <div class="box">
+    <b>Why this matters to me</b><br>
+    <button onclick="toggleText('g2')">Read</button>
+
+    <div id="g2" class="hidden">
+      Because I value genuine connections.
+      And I believe growth should always start with myself.
+    </div>
+  </div>
+
+  <div class="nav">
+    <a href="moments.html">← Back</a>
+    <a href="message.html">Next →</a>
+  </div>
+
+  <script>
+    window.onload = function () {
+      const boxes = document.querySelectorAll(".box");
+      boxes.forEach((box, index) => {
+        setTimeout(() => {
+          box.classList.add("show");
+        }, index * 200);
+      });
+    };
+
+    function toggleText(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === "block" ? "none" : "block";
+    }
+  </script>
+
+</body>
+</html>
